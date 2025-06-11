@@ -18,7 +18,7 @@
             <p style="margin: 0;">Stage : 7 avril - 28 juin</p>
         </div>
         <div class="col">
-            <img src="img/photo_pro.png" alt="photo" style="width: 20%;">
+            <img src="img/photo_pro.png" alt="photo" class="img-fluid" style="width: 20%;">
         </div>
     </div>
 
@@ -63,14 +63,17 @@
                     <ol>
                         <li><b style="text-decoration: #0d6efd underline;">Site Web:</b></li>
                         Cette partie du stage répond à <b>deux problématiques</b> : le site existant était non seulement
-                        <b>peu attractif et obsolète</b>, mais il ne permettait pas non plus la vente en ligne. Jusqu’à récemment,
+                        <b>peu attractif et obsolète</b>, mais il ne permettait pas non plus la vente en ligne. Jusqu’à
+                        récemment,
                         la livraison semblait difficile à mettre en place étant donné que le kombucha est une boisson
                         vivante qui fermente à température ambiante. Une solution logistique ayant été trouvée, il
                         devenait nécessaire d’ajouter une <b>fonctionnalité de boutique en ligne</b> pour accompagner
                         cette évolution de l’activité.
-                        <li style="margin-top: 1%;"><b style="text-decoration: #0d6efd underline;">Outil d'analyse:</b></li>
+                        <li style="margin-top: 1%;"><b style="text-decoration: #0d6efd underline;">Outil d'analyse:</b>
+                        </li>
                         Les effectifs réduits de l'entreprise impliquent une <b>gestion centralisée</b> de l'ensemble
-                        des opérations et rendent cruciale la <b>prise de décisions informées</b>. Pour cette raison j'ai dû
+                        des opérations et rendent cruciale la <b>prise de décisions informées</b>. Pour cette raison
+                        j'ai dû
                         développer un outil de pilotage pour <b>automatiser et rendre plus précise</b> une analyse faite
                         jusqu'à présent sous Excel de manière très chronophage.
                     </ol>
@@ -88,6 +91,28 @@
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
 
+                    <p>
+                        L’unité d’enseignement majoritairement sollicitée pour ce projet est la <b>compétence 1 : Réaliser
+                        un développement d’application</b>. Le <b>développement complet</b> de l’outil d’analyse, mené <b>en
+                        autonomie</b>, m’a conduit à répondre aux besoins de l'utilisateur. Des échanges réguliers ont
+                        permis d’<b>affiner progressivement l’expression des besoins</b> et d’<b>adapter le développement</b> au fur
+                        et à mesure de l’avancement du projet.
+                    </p>
+
+                    <p style="margin-bottom: 0;">
+                        Étant donné que j'étais le <b>seul développeur</b> de l'application j'ai pu mettre à profit ma connaissance de <b>plusieurs langages</b>
+                        comme l'illustre le schéma de la structure de l'application ci-dessous.
+                    </p>
+                    <img src="img/langages_mvc.png" class="img-fluid" alt="schéma structure application" style="margin-top: 0;">
+
+                    <p style="margin-bottom: 1%;">
+                        Le fonctionnement par routes du framework Flask m'a permis d'adopter une <b>approche fonctionnelle</b> : j'ai développé les fonctionnalités de 
+                        l'outil une par une et page par page pour pouvoir <b>communiquer fréquemment l'avancée du projet</b> à l'utilisateur et obtenir son retour après
+                        ses tests de l'application. Ainsi j'ai pu rédiger des routes similaires à celle ci-dessous pour chacune des fonctionnalités de l'application web, 
+                        par exemple ici le calcul des stocks prévisionnels.
+                    </p>
+                    <img src="img/route_flask.png" class="img-fluid" alt="extrait de code (route flask)">
+
                 </div>
             </div>
         </div>
@@ -101,6 +126,76 @@
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
+
+                    <p>
+                        Le développement de l'outil d'analyse m'a permis de mettre en œuvre les enseignements
+                        de l'<b>UE 4 sur la gestion de données</b>. En effet l'application repose sur du <b>traitement
+                            de données</b>,
+                        on transforme des fichiers <b>CSV en tables SQL</b> pour les mettre en relation et les afficher
+                        dans des graphiques
+                        et des tableaux.
+                    </p>
+
+                    <h4>Cheminement des données</h4>
+
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/telechargement_csv.png" class="d-block w-100"
+                                    alt="Téléchargement des fichiers CSV">
+                                <div class="carousel-caption d-none d-md-block position-static text-dark bg-white p-3"
+                                    style="text-align: left;">
+                                    <h5>1. Import des fichiers CSV</h5>
+                                    <p>Première étape : collecter les <b>fichiers CSV bruts</b> issus du logiciel
+                                        <i>Super G</i> depuis le formulaire de dépôt de l'outil.
+                                        Ils contiennent des informations hétérogènes sur les clients, les
+                                        mouvements de stocks, les commandes et les factures.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/insertion_donnees.png" class="d-block w-100"
+                                    alt="Tri et insertion des données dans les tables">
+                                <div class="carousel-caption d-none d-md-block position-static text-dark bg-white p-3"
+                                    style="text-align: left;">
+                                    <h5>2. Tri et insertion des données</h5>
+                                    <p>Les données proviennent de quatre fichiers CSV différents contenant chacun près
+                                        d'une vingtaine de colonnes, souvent <b>techniques et peu explicites</b>. J’ai
+                                        donc
+                                        analysé leur contenu pour <b>identifier les données utiles</b>, croiser les
+                                        fichiers
+                                        entre eux, puis ne conserver que l’essentiel avant insertion dans les tables
+                                        SQL.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/traitement_donnees.png" class="d-block w-100"
+                                    alt="Traitement des données dans des requêtes SQL complexes">
+                                <div class="carousel-caption d-none d-md-block position-static text-dark bg-white p-3"
+                                    style="text-align: left;">
+                                    <h5>3. Traitement des données</h5>
+                                    <p>Pour <b>donner du sens aux données</b>, les rendre compréhensibles et les
+                                        afficher dans des
+                                        <b>tableaux et graphiques</b>
+                                        j'ai dû en faire des traitements dans des requêtes SQL avancées. Comme ci-dessus
+                                        où je calcul le <b>chiffre d'affaires mensuel moyen</b> par client sur les 12
+                                        derniers
+                                        mois avec un traitement différencié en fonction de sa date de première commande.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
 
                 </div>
             </div>
